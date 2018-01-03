@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
 
 namespace brainwipe.hosts
 {
+    // By Rob Lang, From https://github.com/brainwipe/Hosts
     public class HostMap
     {
         private readonly IPAddress address;
