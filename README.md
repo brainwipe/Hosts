@@ -8,27 +8,27 @@ To run, you need to use dotnet core. Build the solution and navigate to `/bin/de
 
 ### List
 
-  dotnet hosts.dll list
+    dotnet hosts.dll list
 
 Gives (comments are ignored):
 
-  127.0.0.1   localhost.com
-  127.0.0.1   myotherdomain.com
+    127.0.0.1   localhost.com
+    127.0.0.1   myotherdomain.com
 
 ### Add Map
    
-  dotnet hosts.dll add "127.1.1.1 newdomain.com"
+    dotnet hosts.dll add "127.1.1.1 newdomain.com"
 
 ### Remove Map
 You have two options, by IP or by domain. If you do by IP then all the maps with the IP are removed.
 	
-  dotnet hosts.dll remove -i "127.1.1.1"
+    dotnet hosts.dll remove -i "127.1.1.1"
 
-  dotnet hosts.dll remove -n "newdomain.com"
+    dotnet hosts.dll remove -n "newdomain.com"
 
 You can also remove all hosts. This is useful if you prefer tear-down and build-up processes.
 
-  dotnet hosts.dll remove -a
+    dotnet hosts.dll remove -a
 
 ## Using the Code
 Copy `/brainwipe.hosts/HostMap.cs` and `/brainwipe.hosts/HostsFile.cs` into your application. You can then use the `HostsFile` class directly. 
@@ -37,13 +37,13 @@ If you need inspiration then check out how it's used in `brainwipe.hosts.cli/Com
 
 ### Examples
 
-  HostsFile.Add("127.0.0.1 mynewdomain.com");
-  HostsFile.RemoveByIp("127.0.0.1");
-  HostsFile.RemoveByHostName("mynewdomain.com");
-  HostsFile.RemoveAll();
+    HostsFile.Add("127.0.0.1 mynewdomain.com");
+    HostsFile.RemoveByIp("127.0.0.1");
+    HostsFile.RemoveByHostName("mynewdomain.com");
+    HostsFile.RemoveAll();
 
-  foreach (var entry in HostsFile.Entries)
-  {
-     Debug.WriteLine(entry.ToString());
-  }
+    foreach (var entry in HostsFile.Entries)
+    {
+       Debug.WriteLine(entry.ToString());
+    }
   
